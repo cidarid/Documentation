@@ -87,6 +87,7 @@ def new(request):
             doc_text=request.POST['doc_text'],
             category=Category.objects.get(id=request.POST['category']),
             date_modified=timezone.now(),
+            doc_type=Documentation.WRITTEN,
             date_published=timezone.now()
         )
         d.save()
@@ -132,6 +133,7 @@ def handle_uploaded_file(document, post):
         doc_title=post['title'],
         doc_text="",
         category=Category.objects.get(id=post['category']),
+        doc_type=Documentation.HTML,
         date_modified=timezone.now(),
         date_published=timezone.now()
     )

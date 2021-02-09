@@ -8,5 +8,7 @@
   <p>{{ documentation.doc_text|safe }}</p>
   <p class="subtext">This document was published on {{ documentation.date_published }}</p>
   <p class="subtext">This document was last modified on {{ documentation.date_modified }}</p>
-  <a href="{{ documentation.get_edit_url }}" class="button">Edit this document</a>
+  {% if documentation.doc_type == "WRITTEN"  %}
+    <a href="{{ documentation.get_edit_url }}" class="button">Edit this document</a>
+  {% endif %}
 </div>

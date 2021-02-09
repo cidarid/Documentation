@@ -25,12 +25,24 @@ class Category(models.Model):
 
 
 class Documentation(models.Model):
+    HTML = "HTML"
+    WRITTEN = "WRITTEN"
+    DOCUMENTATION_TYPES = (
+        (HTML, "html"),
+        (WRITTEN, "written"),
+    )
+
     doc_title = models.CharField(max_length=256)
     slug = models.SlugField(blank=True)
     doc_text = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, default=1)
     date_published = models.DateTimeField('Date published', default=timezone.now)
     date_modified = models.DateTimeField('Date modified', default=timezone.now)
+    doc_type = models.CharField(
+        max_length=7,
+        choices=DOCUMENTATION_TYPES,
+        default=1
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
