@@ -49,8 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # third party
-    'markdownify',
     # own
     'pages',
     'documentation',
@@ -137,12 +135,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-MARKDOWNIFY_STRIP = False
-MARKDOWNIFY_WHITELIST_TAGS = {
- 'a', 'p',
- 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7',
- 'ul', 'li', 'span',
-}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
