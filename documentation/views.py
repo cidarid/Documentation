@@ -2,11 +2,8 @@ from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from django.views import generic
-import word2html
 import os
 import mammoth
-import base64
 import shutil
 
 from .models import Documentation, Category, Document
