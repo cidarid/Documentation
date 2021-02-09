@@ -1,0 +1,22 @@
+{% include "documentation/sidebar.html" %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="main">
+  <h1>Documentation</h1>
+  <ul style="list-style-type: none;">
+    {% for cat in all_categories %}
+      <a class="block" href="{{ cat.get_absolute_url }}">
+        {{ cat.name }}
+      </a>
+    {% endfor %}
+  </ul>
+  <ul>
+    <a href="{% url 'documentation:new' %}" class="button">Create new documentation</a>
+    <a href="{% url 'documentation:new_category' %}" class="button">Create new category</a>
+    <a href="{% url 'documentation:upload' %}" class="button">Upload documentation</a>
+  </ul>
+
+</div>

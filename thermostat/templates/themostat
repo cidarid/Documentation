@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'therm.css' %}">
+	<title>micro</title>
+</head>
+
+<p>
+    {{ object.title }} - {{ object.percent }}%
+
+</p>
+
+<div class="trackingMeter">
+    <h3>{{ object.title }}</h3>
+    <p class="goal"></p>
+    <span class="glass">
+		<!-- UPDATE BOTTOM %, HEIGHT %, AND TOTAL -->
+		<p class="total" style="bottom: {{ object.percent }}%">{{ object.percent }}%</p>
+		<span class="amount" style="height:{{ object.percent }}%; background-color:{{ object.color }}"></span>
+		</span>
+    <div class="bulb">
+        <span class="fill-circle" style="background-color:{{ object.color }}"></span>
+        <span class="filler" style="background-color:{{ object.color }}">
+		  <span></span>
+		</span>
+    </div>
+</div>
+
+

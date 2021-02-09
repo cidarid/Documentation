@@ -1,0 +1,13 @@
+{% include "documentation/sidebar.html" %}
+{% load static %}
+{% load markdownify %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="main">
+  <h1>{{ documentation.doc_title }}</h1>
+  <p>{{ documentation.doc_text|safe }}</p>
+  <p class="subtext">This document was published on {{ documentation.date_published }}</p>
+  <p class="subtext">This document was last modified on {{ documentation.date_modified }}</p>
+  <a href="{{ documentation.get_edit_url }}" class="button">Edit this document</a>
+</div>

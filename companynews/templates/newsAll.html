@@ -1,0 +1,22 @@
+{% extends 'newsBase.html' %}
+
+{% block content %}
+
+<h2>All News</h2>
+<ul>
+
+    {% if object_list.exists %}
+
+        {% for instance in object_list reversed %}
+
+        <li><a href="{{ instance.id }}">{{ instance.title }}</a>: {{instance.created_on}} - {{ instance.summary }} </li>
+
+        {% endfor %}
+    {% else %}
+
+    <p>There are no articles</p>
+
+    {% endif %}
+
+</ul>
+{% endblock %}

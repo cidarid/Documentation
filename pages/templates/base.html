@@ -1,0 +1,160 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Microspec - Internal Page</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicons/icon16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicons/icon32.png' %}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static '/images/favicons/icon48.png' %}">
+    <link rel="stylesheet" href="{% static '/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static '/thermometer.css' %}">
+    <script src="{% static 'scripts/dashboardScript.js' %}"></script>
+</head>
+
+<body onload="updateAll(); setInterval('updateClock()', 1000 );">
+
+<header>
+<img id="logo" src="{% static '/images/microspec.png' %}" alt="Microspec Logo"> <h1>Microspec Corporation</h1>
+<span id="date"></span>
+<span id="time"></span>
+<a class="weatherwidget-io" href="https://forecast7.com/en/42d87n71d95/peterborough/?unit=us" data-label_1="PETERBOROUGH" data-label_2="WEATHER" data-theme="original" ></a>
+
+    <!-- Fonts -->
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</header>
+
+<div id="container">
+<div class='column'>
+<section class='content' id='left'>
+
+<h2>Links</h2>
+
+
+<h3>Help Desks</h3>
+<div class="center">
+    <div class="linkItem">
+    <a href="https://microspecorporation.on.spiceworks.com/portal" target="_blank">
+        <img src="{% static '/images/icons/ITHelp.png' %}" class="iconLink"><span>IT Help<br>Desk</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="https://microspecorporationhr.on.spiceworks.com/portal" target="_blank">
+        <img src="{% static '/images/icons/HRHelp.png' %}" class="iconLink"><span>HR Help Desk</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="https://microspecorporationbg.on.spiceworks.com/portal" target="_blank">
+        <img src="{% static '/images/icons/BGHelp.png' %}" class="iconLink"><span>B&G Help Desk</span></a>
+    </div>
+</div>
+
+<h3>Reporting</h3>
+<div class="center">
+    <div class="linkItem">
+    <a href="http://dc-2/Microspec/TEST/MBDR/DRUpdate.asp" target="_blank">
+        <img src="{% static '/images/icons/DRIcon.jpg' %}" class="iconLink"><span>Daily Reporting</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="http://dc-2/Microspec/tc.asp" target="_blank">
+        <img src="{% static '/images/icons/TCIcon.jpg' %}" class="iconLink"><span>Tool Crib<br>Log</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="http://dc-2/Microspec/rawmaterials.asp" target="_blank">
+        <img src="{% static '/images/icons/RMIcon.jpg' %}" class="iconLink"><span>Raw Materials</span></a>
+    </div>
+</div>
+
+
+    <h3>Company</h3>
+<div class="center">
+    <div class="linkItem">
+    <a href="http://app-1:81/app/webclock/#/EmployeeLogOn" target="_blank">
+        <img src="{% static '/images/icons/timeClockPlus.jpg' %}" class="iconLink"><span>TimeClockPlus</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="https://microspecorporation.thinkzoom.com/users/sign_in" target="_blank">
+        <img src="{% static '/images/icons/thinkZoom.jpg' %}" class="iconLink"><span>ThinkZoom</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="https://www.office.com" target="_blank">
+        <img src="{% static '/images/icons/office-365-logo.jpg' %}" class="iconLink"><span>Office 365 (Email)</span></a>
+    </div>
+
+    <div class="linkItem">
+    <a href="https://microspecorporation.clearcompany.com/" target="_blank">
+        <img src="{% static '/images/icons/ClearCompLogo.png' %}" class="iconLink"><span>Clear Company</span></a>
+    </div>
+</div>
+
+
+</section>
+</div>
+<div class='column'>
+<section class='content' id='top'>
+
+<img id="google" src="../static/images/google.png">
+
+
+<form method="get" action="https://www.google.com/search" target="_blank">
+<input id="gbar" type="text" placeholder="Search" name="q" size="31" value="">
+<button type="submit">&#128270;</button>
+</form>
+
+
+</section>
+<section class='content' id='bottom'>
+<h2><a href="../companynews/">Company News</a></h2>
+<div class="center"></div>
+    <ul>
+    {% for instance in internalNews %}
+
+    <li><a href="../companynews/{{ instance.id }}">{{ instance.title }}</a> - {{ instance.summary }}</li>
+
+    {% endfor %}
+
+    </ul>
+
+</section>
+</div>
+<div class='column' id='right'>
+<section class='content'><h2>Goals</h2>
+    <div class="offCenter">
+    {% for instance in thermostats %}
+        <div class="trackingMeter">
+            <h3>{{ instance.title }}</h3>
+            <p class="goal"></p>
+            <span class="glass">
+            <!-- UPDATE BOTTOM %, HEIGHT %, AND TOTAL -->
+            <p class="total" style="bottom: {{ instance.percent }}%">{{ instance.percent }}%</p>
+            <span class="amount" style="height:{{ instance.percent }}%; background-color:{{ instance.color }}"></span>
+            </span>
+            <div class="bulb">
+            <span class="fill-circle" style="background-color:{{ instance.color }}"></span>
+            <span class="filler" style="background-color:{{ instance.color }}">
+              <span></span>
+            </span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+</div>
+</div>
+
+<div id="news" >
+<!-- NEWS TICKER POPULATES HERE -->
+<table id="marquee">
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+{% load static %}
+<!--
+      Author: Morgan Barnes
+      Last Updated:   10.01.2020
+	  
+	  Index page for TVDash
+
+      Filename:  TVDashboard.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Microspec Corporation</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/dashboardCSS.css' %}">
+		<script src="{% static 'script/dashboardScript.js' %}"></script>
+	</head>
+
+	<body onload="updateAll(); setInterval('updateClock()', 1000 )">
+		
+		<header>
+			<img id="logo" src="{% static 'img/microspec.png' %}"> <h1>Microspec Corporation</h1>
+			<span id="date"></span>
+			<span id="time"></span>
+			<a class="weatherwidget-io" href="https://forecast7.com/en/42d87n71d95/peterborough/?unit=us" data-label_1="PETERBOROUGH" data-label_2="WEATHER" data-theme="original" ></a>
+		</header>
+		
+		<div id="container">
+		<section id="main">
+			<!--<iframe src="https://microspecorporation-my.sharepoint.com/personal/scan_microspecorporation_com/_layouts/15/Doc.aspx?sourcedoc={12e6227b-37da-4078-81ec-f489efdda814}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="1131px" height="636px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+			</iframe>-->
+            <video muted autoplay loop width="1131px">
+              <source id="ProdSched" src="{% static 'img/production.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+		</section>
+		<aside>
+			<div class="center">
+			<div class="trackingMeter" >
+			<p>Sales Goal</p>
+			<p class="goal"></p>
+			<span class="glass">
+			<p class="total" id="salesg"></p>
+			<span class="amount" id="salesgh"></span>
+			</span>
+			<div class="bulb">
+			<span class="red-circle"></span>
+			<span class="filler">
+			</span>
+			</div>
+			</div>
+			<div class="trackingMeter">
+			<p>WIP Goal</p>
+			<p class="goal"></p>
+			<span class="glass">
+			<p class="total" id="wipg"></p>
+			<span class="amount" id="wipgh"></span>
+			</span>
+			<div class="bulb">
+			<span class="red-circle"></span>
+			<span class="filler">
+			</span>
+			</div>
+			</div>
+			
+					
+			</div>
+
+		</aside>
+
+
+</div>
+		
+</div>
+	
+<div id="news" >
+<!-- NEWS TICKER POPULATES HERE -->
+<table id="marquee">
+</table>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="updateBtn" onclick="modal()">Update</button>
+
+<!-- The Modal -->
+<div id="update" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+<span class="close">&times;</span>
+<form action="#">
+<table>
+<tr>
+<td><label for="sales">Sales:</label></td>
+<td><p><input type="number" min="0" max="100" step="any" id="salesInput" name="Sales">%</p></td>
+</tr>
+<tr>
+<td><label for="wip">WIP:</label></td>
+<td><p><input type="number" min="0" max="100" step="any" id="wipInput" name="WIP">%</p></td>
+</tr>
+<tr>
+<td></td>
+<td><button type="submit" action="post">Update</button></td>
+</tr>
+</table>
+</form> 
+</div>
+	
+</body>
+</html>

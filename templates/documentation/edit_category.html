@@ -1,0 +1,11 @@
+{% include "documentation/sidebar.html" %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<form action="{% url 'documentation:edit_category' category.slug category.pk %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit">
+</form>

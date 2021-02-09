@@ -1,0 +1,18 @@
+{% extends 'newsBase.html' %}
+
+{% block content %}
+
+<section class="articleBlock">
+<h1>{{ object.title }} </h1>
+
+<p>
+	{{ object.created_on }}<br>
+	{{ object.summary }}<br>
+	{{ object.content | safe }}
+
+
+
+</p>
+</section>
+
+{% endblock %}

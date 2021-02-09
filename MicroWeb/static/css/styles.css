@@ -1,0 +1,123 @@
+html{
+	background-color: #000;
+	background-image: url(../img/extrusions.jpg);
+}
+
+body{
+
+	width: 60%;
+	margin: auto;
+	
+}
+header{
+	text-align: center;
+}
+
+h1{
+	color: #fff;
+	font-size: 70px;
+	font-family: 'Press Start 2P', sans-serif;
+	text-shadow:3px 3px 5px black;
+}
+
+section{
+	background-color: rgba(149, 169, 203, 0.5);
+	border-radius: 15px;
+	padding: 20px;
+	height: 460px;
+}
+
+table{
+	margin: auto;
+}
+
+td{
+	padding: 10px 15px;
+	text-align: center;
+	height: 230px;
+}
+
+img {
+  width: 90%;
+  -webkit-filter: drop-shadow(5px 5px 2px #222);
+  filter: drop-shadow(5px 5px 2px #222);
+}
+
+img:hover{
+  width: 100%;
+  -webkit-filter: drop-shadow(13px 13px 5px #222);
+  filter: drop-shadow(13px 13px 5px #222);
+   transition: width 0.5s,
+				filter 0.5s;
+}
+
+p{
+	margin-top: 1px;
+}
+
+a:link{
+	font: sans-serif;
+	text-decoration: none;
+	text-shadow:3px 3px 2px black;
+	color: #fff;
+	font-size: 20px;
+  
+}
+
+a:visited{
+	font: sans-serif;
+	text-decoration: none;
+	text-shadow:3px 3px 2px black;
+	color: #fff;
+	font-size: 20px;
+
+}
+
+a:hover{
+	font: sans-serif;
+	text-decoration: none;
+	text-shadow: 13px 13px 5px black;
+	color: #95a9cb;    
+	font-size: 25px;
+	transition: color 0.5s,
+			   font-size 0.5s,
+			   text-shadow 0.5s;
+}
+
+
+a:active{
+  	font: sans-serif;
+	text-decoration: none;
+	text-shadow: 13px 13px 5px black;
+	color: #95a9cb;    
+	font-size: 25px;
+	transition: color 0.5s,
+			   font-size 0.5s,
+			   text-shadow 0.5s;
+}
+
+
+
+@keyframes doggie {
+  0%   {left:-50px;
+		top: 0;}
+ 
+  97% {left:1500px;}
+  100% {bottom:1500px;
+		display: none;}
+  
+}
+
+footer{
+	overflow: hidden;
+}
+
+div#doggie{
+	left:-500px;
+	width:5%;
+	position: relative;
+	animation-name: doggie;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+}
+

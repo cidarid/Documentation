@@ -1,0 +1,14 @@
+{% include "documentation/sidebar.html" %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="main">
+  <h1>{{ category.name }}</h1>
+  <ul>
+    {% for doc in docs_in_category %}
+      <a class="block" href="{{ doc.get_absolute_url }}">{{ doc.doc_title }}</a>
+    {% endfor %}
+  </ul>
+  <a href="{{ category.get_edit_url }}" class="button">Change category name</a>
+</div>

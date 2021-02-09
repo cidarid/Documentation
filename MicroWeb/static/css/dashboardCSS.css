@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+/*
+*	Author: Morgan Barnes
+*	Date:   09.29.2020
+*		  
+*	CSS Style Document for TVDash
+*	
+*	Filename:  dashboardCSS.css
+**/
+
+html{
+	background-color: #000;
+	background-image: url(../img/extrusions.jpg);
+	font-family: sans-serif;
+}
+
+body{
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+
+div.container{
+	display: flex;
+	margin: auto;
+}
+
+div.center{
+	display: flex;
+	margin: auto;
+}
+
+h2{
+	color: rgb(0,43,84);
+}
+
+
+
+/* Header Styles */
+
+header{
+	padding: 3px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #fff;
+	margin: 0 auto;
+}
+
+img#logo{
+	width: 80px;
+	display: block;
+	float: left;
+	padding: 5px 0 0;
+}
+
+header > h1 {
+	float: left;
+	padding-left: 10px;
+	text-shadow: 5px 5px 10px #000000;
+	font-size: 35px;
+}
+
+span#date{
+	float: right;
+	padding-top: 0;
+	font-size: 30px;
+}
+
+span#time{
+	float: right;
+	clear: right;
+	font-size: 30px;
+}
+
+ /* Section and Aside Styles */
+
+section{
+	border-radius: 15px;
+	color: #fff;
+	width: 79%;
+	padding-left: 2px;
+	margin: 5px 5px 0;
+	display: block;
+	float: left;
+}
+
+aside{
+	background-color: rgba(149, 169, 203, 0.7);
+	padding: 0 30px 0 0;
+	margin: 5px;
+	width: 15%;
+	display: block;
+	float: right;	
+	border-radius: 15px;
+	max-height: 636px;
+	overflow: hidden;
+}
+
+
+/* Widget Styles */
+
+/* News Ticker */
+@keyframes marquee {
+       100% { 
+    transform: translateX(-85%);  
+  }
+  
+}
+
+div#news{
+	position: absolute;
+	top: 860px;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(149, 169, 203, 0.7);
+	padding: 0 0 10px;
+}
+
+#marquee{
+	animation: marquee 120s linear infinite;
+	width: 100%;
+}
+
+#marquee td{
+	width: 100%;
+	white-space: nowrap;
+	padding: 3px 20px;
+}
+
+#news a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+}
+
+/* Slideshow */
+
+iframe{
+	border-radius: 15px;
+}
+
+
+/* Weather Bar */
+.weatherwidget-io{
+	clear: left;
+	border-radius: 15px;
+}
+
+/* Tracking Therm */
+
+ .trackingMeter {
+	 display: inline-block;
+	 width: 48px;
+	 margin: auto;
+	 padding: 15px 30px 0;
+}
+
+ .trackingMeter p{
+
+}
+
+ .trackingMeter .glass {
+	 background: #e5e5e5;
+	 border-radius: 100px 100px 0 0;
+	 display: block;
+	 height: 505px;
+	 margin: 0 35px 10px;
+	 padding: 5px;
+	 position: relative;
+	 width: 20px;
+}
+
+ .trackingMeter .amount {
+	 background: rgb(255, 139, 139);
+	background: -moz-linear-gradient(top, rgb(255, 128, 128) 0%, rgb(255, 0, 10) 83%, rgb(255, 0, 10) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(255, 139, 139)), color-stop(83%, rgb(255, 0, 10)), color-stop(100%, rgb(255, 0, 10)));
+	background: -webkit-linear-gradient(top, rgb(255, 139, 139) 0%, rgb(255, 0, 10) 83%, rgb(255, 0, 10) 100%);
+	background: -o-linear-gradient(top, rgb(255, 139, 139) 0%, rgb(255, 0, 10) 83%, rgb(255, 0, 10) 100%);
+	background: -ms-linear-gradient(top, rgb(255, 139, 139) 0%, rgb(255, 0, 10) 83%, rgb(255, 0, 10) 100%);
+	background: linear-gradient(to bottom, rgb(255, 139, 139) 0%, rgb(255, 0, 10) 83%, rgb(255, 0, 10) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3636', endColorstr='#6e181b', GradientType=0 );
+	 border-radius: 100px;
+	 display: block;
+	 width: 20px;
+	 position: absolute;
+	 bottom: 5px;
+	 z-index: 100;
+}
+
+ .trackingMeter p {
+	 margin: 0;
+	 padding-left: 30px;
+	 display: block;
+	 text-align: center;
+	 color: #fff;
+}
+
+ .trackingMeter .goal {
+	 font-size: 30px;
+}
+
+ .trackingMeter .total {
+	 font-size: 16px;
+	 position: absolute;
+	 right: 35px;
+}
+
+ .bulb {
+	 background: #e5e5e5;
+	 border-radius: 100px;
+	 display: block;
+	 height: 50px;
+	 margin: 0 35px 10px;
+	 padding: 5px;
+	 position: relative;
+	 top: -20px;
+	 right: 15px;
+	 width: 50px;
+}
+
+ .bulb .red-circle {
+	 background: #FF000A;
+	 border-radius: 100px;
+	 display: block;
+	 height: 50px;
+	 width: 50px;
+}
+ .bulb .filler {
+	 background: #FF000A;
+	 border-radius: 100px 100px 0 0;
+	 display: block;
+	 height: 30px;
+	 width: 20px;
+	 position: relative;
+	 top: -65px;
+	 right: -15px;
+	 z-index: 30;
+}
+
+ button#updateBtn{
+	height: 30px;
+	border-radius: 15px;
+	position:absolute;
+    bottom:0;
+    right:0;
+    opacity: 0%;
+}
+
+button#updateBtn:hover{
+	height: 30px;
+	border-radius: 15px;
+	position:absolute;
+    bottom:0;
+    right:0;
+    opacity: 20%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%; /* Could be more or less, depending on screen size */
+  border-radius: 15px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

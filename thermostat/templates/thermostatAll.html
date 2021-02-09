@@ -1,0 +1,26 @@
+{% load static %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'therm.css' %}">
+	<title>micro</title>
+</head>
+
+{% for instance in object_list %}
+
+	<div class="trackingMeter">
+		<h3>{{ instance.title }}</h3>
+		<p class="goal"></p>
+		<span class="glass">
+		<!-- UPDATE BOTTOM %, HEIGHT %, AND TOTAL -->
+		<p class="total" style="bottom: {{ instance.percent }}%">{{ instance.percent }}%</p>
+		<span class="amount" style="height:{{ instance.percent }}%; background-color:{{ instance.color }}"></span>
+		</span>
+		<div class="bulb">
+		<span class="fill-circle" style="background-color:{{ instance.color }}"></span>
+		<span class="filler" style="background-color:{{ instance.color }}">
+		  <span></span>
+		</span>
+		</div>
+		</div>
+
+
+{% endfor %}

@@ -1,0 +1,36 @@
+{% include "documentation/sidebar.html" %}
+
+{% load static %}
+
+
+<div class="main">
+  <!-- List of uploaded documents
+{% if documents %}
+    <ul>
+    {% for document in documents %}
+        <li><a href="{{ document.doc_file.url }}">{{ document.doc_file.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No documents.</p>
+{% endif %}
+-->
+
+  <!-- Upload form. Note enctype attribute! -->
+  <form action="{% url 'documentation:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.non_field_errors }}</p>
+    <p>{{ form.doc_file.label_tag }} {{ form.doc_file.help_text }}</p>
+    <p>
+      {{ form.doc_file.errors }}
+      {{ form.doc_file }}
+    </p>
+    <p>
+      Select a title for your documentation: {{ form.title }}
+    </p>
+    <p>
+      Select a category for your documentation: {{ form.category }}
+    </p>
+    <p><input type="submit" value="Upload"/></p>
+  </form>
+</div>

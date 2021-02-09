@@ -1,0 +1,296 @@
+@charset "utf-8";
+@keyframes marquee {
+	100% {
+		transform: translateX(-85%);
+	}
+}
+
+$header-font-stack: 'Raleway', Arial, sans-serif;
+
+html {
+	background-color: #000;
+	background-image: url("../images/extrusions.jpg");
+	font-family: sans-serif;
+}
+body {
+	width: 95%;
+	margin: auto;
+	overflow-x: hidden;
+	max-width: 1700px;
+}
+div.container {
+	display: flex;
+	margin: auto;
+	overflow-x: hidden;
+}
+.column {
+	width: 33.33%;
+	height: 80%;
+	float: left;
+	margin: 0 auto;
+}
+.content {
+	background: rgba(189, 209, 243, 0.7);
+	min-height: 645px;
+	height: 97%;
+	width: 98%;
+	color: #000;
+	h2, li{
+		a{
+			&:link {
+				text-decoration: none;
+				color: #002b54;
+
+			}
+			&:visited {
+				text-decoration: none;
+				color: #002b54;
+			}
+			&:hover {
+				text-decoration: none;
+				color: #488cd2;
+			}
+			&:active {
+				text-decoration: none;
+				color: #488cd2;
+			}
+		}
+	}
+}
+
+
+.content#left {
+
+	overflow-y: scroll;
+
+	h3{
+		margin-bottom: 0;
+		padding-bottom: 20px;
+		text-align: center;
+		color:  #002b54;
+		font-family: $header-font-stack;
+	}
+
+}
+.content#top {
+	min-height: 150px;
+	height: 10%;
+	text-align: center;
+}
+#google {
+	text-align: center;
+	width: 30%;
+	padding: 15px;
+}
+input {
+	width: 300px;
+	height: 30px;
+	border-radius: 32px;
+	border: none;
+	background-color: #fff;
+	-webkit-box-shadow: inset 0 1px 1px #000, 0 1px 0 0 #a5a5a5;
+	box-shadow: inset 0 1px 1px #000, 0 1px 0 0 #a5a5a5;
+	padding-left: 10px;
+	font-size: 16px;
+	outline: none;
+}
+button {
+	background: #ccc;
+	color: #333;
+	height: 30px;
+	border: 0;
+	font-size: 16px;
+	border-radius: 32px;
+	font-family: sans-serif;
+	transition: 0.6s;
+	overflow: hidden;
+}
+
+.content#bottom {
+	min-height: 485px;
+	height: 75.1%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		font-size: 20px;
+	}
+	li {
+		margin: 20px;
+	}
+
+}
+.container {
+	&:after {
+		clear: both;
+	}
+}
+header {
+	padding: 3px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #fff;
+	margin: 0 auto;
+
+	h1 {
+		float: left;
+		padding-left: 10px;
+		text-shadow: 5px 5px 10px #000000;
+		font-size: 35px;
+		font-family: $header-font-stack;
+	}
+
+	img#logo {
+	width: 80px;
+	display: block;
+	float: left;
+	padding: 0 ;
+	}
+}
+
+span#date {
+	float: right;
+	padding-top: 0;
+	font-size: 30px;
+}
+span#time {
+	float: right;
+	clear: right;
+	font-size: 30px;
+}
+section {
+	border-radius: 15px;
+	color: #fff;
+	width: 79%;
+	padding-left: 2px;
+	margin: 5px 5px 0;
+	display: block;
+	float: left;
+}
+aside {
+	background-color: rgba(149, 169, 203, 0.7);
+	padding: 0 30px 0 0;
+	margin: 5px;
+	width: 15%;
+	display: block;
+	float: right;
+	border-radius: 15px;
+	max-height: 636px;
+	overflow: hidden;
+}
+div#news {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(149, 169, 203, 0.7);
+	margin: 0 0 10px;
+}
+#marquee {
+	animation: marquee 120s linear infinite;
+	width: 100%;
+	td {
+		width: 100%;
+		white-space: nowrap;
+		padding: 3px 20px;
+	}
+}
+#news {
+	a {
+		text-decoration: none;
+		color: #ffffff;
+		font-size: 25px;
+	}
+}
+h2 {
+	color: rgb(0,43,84);
+	padding: 0 10px 0;
+	text-align: center;
+		font-family: $header-font-stack;
+}
+.weatherwidget-io {
+	clear: left;
+	border-radius: 15px;
+}
+.center {
+	text-align: center;
+}
+
+
+
+div.linkItem {
+	vertical-align: top;
+	display: inline-block;
+	text-align: center;
+	width: 120px;
+
+	img {
+		width: 50px;
+		height: 50px;
+		border-radius: 10px;
+	}
+
+	span {
+		display: block;
+	}
+
+a{
+			&:link {
+				text-decoration: none;
+				color: #002b54;
+
+			}
+			&:visited {
+				text-decoration: none;
+				color: #002b54;
+			}
+			&:hover {
+				text-decoration: none;
+				color: #488cd2;
+			}
+			&:active {
+				text-decoration: none;
+				color: #488cd2;
+			}
+		}
+
+	span{
+		padding: 10px;
+	}
+
+
+}
+
+div.offCenter{
+	position: relative;
+	text-align: center;
+	right: 25px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  	background: rgba(72, 140, 210, 0.5);
+	border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+  	background: rgba(72, 140, 210, 0.5);
+}

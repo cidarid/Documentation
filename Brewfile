@@ -1,0 +1,8 @@
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "httrack"
+brew "hyperkit"
+brew "kubernetes-cli"
+brew "minikube"
+brew "wget"

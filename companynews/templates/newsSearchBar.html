@@ -1,0 +1,10 @@
+{% extends 'newsBase.html' %}
+
+{% block content %}
+
+<h2>Search News</h2>
+<form action="/companynews/search" method="get" id="searchPage">
+        <input name="q" type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

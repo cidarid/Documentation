@@ -1,0 +1,23 @@
+{% extends 'tutorialBase.html' %}
+
+{% block content %}
+
+<h2>Search Results</h2>
+<ul>
+
+    {% if object_list.exists %}
+
+        {% for instance in object_list reversed %}
+
+        <li><a href="../{{ instance.id }}">{{ instance.title }}</a>: {{instance.created_on}} - {{ instance.summary }} </li>
+
+        {% endfor %}
+
+    {% else %}
+
+    <p id="searchError">There are no tutorials that match the search "{{ search_query }}"</p>
+
+    {% endif %}
+
+</ul>
+{% endblock %}

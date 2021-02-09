@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static '/styles/newsStyles.css' %}" >
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="{% static '/scripts/scripts.js' %}"></script>
+
+    <title>Microspec - Tutorials</title>
+
+</head>
+
+<body>
+<header>
+
+   <h1><a href="/tutorials/">Microspec Tutorials</a></h1>
+
+    <form action="/tutorials/search" method="get">
+        <input name="q" type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/companynews/">News</a></li>
+        <li><a href="/tutorials/">Tutorials</a></li>
+    </ul>
+</nav>
+
+</header>
+
+
+
+<div class="container">
+{% block content %}
+
+
+
+{% endblock %}
+</div>
+</body>
+</html>

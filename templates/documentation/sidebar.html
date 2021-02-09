@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+<div class="sidenav">
+  <li><a class="heading" href="{% url 'documentation:index' %}">Home</a></li>
+  {% for cat in all_categories %}
+    {% if category == cat and not documentation %}
+      <li class="selected"><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+    {% else %}
+      <li><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+    {% endif %}
+    {% if cat == category %}
+      {% for doc in all_documentation %}
+        {% if doc.category == category %}
+          {% if doc == documentation %}
+            <li class="selected"><a href="{{ doc.get_absolute_url }}" class="sub-category">{{ doc.doc_title }}</a></li>
+          {% else %}
+            <li><a href="{{ doc.get_absolute_url }}" class="sub-category">{{ doc.doc_title }}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
